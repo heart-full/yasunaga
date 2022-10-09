@@ -468,3 +468,101 @@ img {
 .plan .btn {
 	width: auto;
 }
+
+/* 特定商取引法に基づく表記 */
+#Notations table {
+	background-color: #999999;
+	width: fit-content;
+	margin: 0 auto;
+	border: none;
+
+}
+
+#Notations th {
+	background-color: #eeeeee;
+	font-weight: normal;
+	min-width: 8em;
+}
+
+#Notations td {
+	background-color: #ffffff;
+}
+
+#Notations td span {
+	white-space: nowrap;
+}
+
+@media (max-width: 840px) {
+	#Notations table {
+		display: contents;
+	}
+
+	#Notations :is(tr, th, td) {
+		display: block;
+	}
+}
+
+/* 会社概要 */
+#About :is(dl, dt, dd) {
+  margin: 0;
+  padding: 0;
+/*   リセットCSS（適用するサイトで定義済なら不要） */
+}
+
+#About .company-overview {
+  border-top: 1px solid #ddd;
+}
+
+#About .company-overview .item {
+  padding: 24px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+@media screen and (min-width: 560px) {
+  #About .company-overview .item {
+    display: grid;
+    /*項目名：名称の横幅比率*/
+    grid-template-columns: 1fr 5fr;
+    /*項目名：名称の間の余白*/
+    column-gap: 32px;
+    -webkit-column-gap: 32px;
+    -moz-column-gap: 32px;
+  }
+}
+
+/* お問い合わせ */
+#Contact :is(th, td) {
+	font-weight: normal;
+	text-align: left;
+	padding: 0.25em 0.5em;
+	box-sizing: border-box;
+}
+
+#Contact :is(input[type="text"], select, textarea) {
+	font-size: clamp(16px, 2.4vw, 18px);
+	width: calc(100% - 0.5em);
+}
+
+@media (max-width: 480px) {
+	#Contact table {
+		display: block;
+		box-sizing: border-box;
+	}
+
+	#Contact tr {
+		display: contents;
+	}
+
+	#Contact :is(th, td) {
+		display: block;
+		width: 87vw;
+	}
+
+	#Contact th {
+		background-color: #eeeeee;
+	}
+
+	#Contact td {
+		margin-bottom: 1em;
+	}
+}
